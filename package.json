@@ -13,6 +13,7 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.2.2",
     "dayjs": "^1.11.7",
+    "eslint-plugin-cypress": "^2.12.1",
     "formik": "^2.2.9",
     "highcharts": "^10.3.2",
     "highcharts-react-official": "^3.1.0",
@@ -31,8 +32,13 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "react-scripts test --testPathPattern src/__tests__/unit --env=jsdom --coverage jest --silent",
+    "one-test": "react-scripts test --testPathPattern src/__tests__/unit/views/dashboard/utils.test.js --env=jsdom --coverage jest --silent false",
+    "cypress": "cypress open",
+    "eject": "react-scripts eject",
+    "lint:js": "eslint src --fix",
+    "lint:check-js": "eslint src",
+    "prepare": "husky install"
   },
   "eslintConfig": {
     "extends": [
@@ -52,6 +58,11 @@
       "last 1 safari version"
     ]
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn run lint:js"
+    }
+  },
   "devDependencies": {
     "cypress": "^12.3.0",
     "eslint-config-airbnb": "^19.0.4",
@@ -65,5 +76,22 @@
     "husky": "^8.0.3",
     "lint-staged": "^13.1.0",
     "prettier": "^2.8.2"
+  },
+  "jest": {
+    "coverageThreshold": {
+      "global": {
+        "branches": 50,
+        "functions": 50,
+        "lines": 50,
+        "statements": 70
+      }
+    },
+    "coveragePathIgnorePatterns": [
+      "/src/App.js",
+      "/src/index.js",
+      "/src/pages",
+      "/src/reportWebVitals.js",
+      "./src/__tests__/__fixtures__/*"
+    ]
   }
 }

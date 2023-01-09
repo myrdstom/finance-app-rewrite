@@ -4,7 +4,7 @@ export const columns = [
   { id: "name", label: "Contact", maxWidth: 170 },
   { id: "code", label: "Address", maxWidth: 100 },
   { id: "name", label: "Country", maxWidth: 170 },
-  { id: "name", label: "", minWidth: 170 }
+  { id: "name", label: "", minWidth: 170 },
 ];
 
 export const section = "Client";

@@ -3,5 +3,5 @@ export const user = {
   password: "P@ssw0rd",
   confirmPassword: "P@ssw0rd",
   firstName: "test",
-  lastName: "user"
+  lastName: "user",
 };

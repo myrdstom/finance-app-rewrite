@@ -1,7 +1,7 @@
 import React from "react";
 import * as reactRedux from "react-redux";
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
-import LoginView from "../../../../views/auth/login/login-view";
+import { Login } from "../../../../features/auth/login";
 import { RenderWithRouterMatch } from "../../../test-utils";
 import { user } from "../../../__fixtures__/user";
 
@@ -17,7 +17,7 @@ describe("Login Tests", () => {
   test("If email and password are entered", async () => {
     const { getByText } = render(
       <RenderWithRouterMatch>
-        <LoginView />
+        <Login />
       </RenderWithRouterMatch>
     );
 
@@ -28,7 +28,9 @@ describe("Login Tests", () => {
     fireEvent.change(password, { target: { value: user.password } });
     const button = screen.getByRole("button", { name: "LogIn" });
     fireEvent.click(button);
-    useSelectorMock.mockReturnValue({ authentication: { isAuthenticated: true, error: [] } });
+    useSelectorMock.mockReturnValue({
+      authentication: { isAuthenticated: true, error: [] },
+    });
     await waitFor(() => getByText(/Dashboard/i));
   });
 });

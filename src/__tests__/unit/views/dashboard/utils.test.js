@@ -1,4 +1,7 @@
-import { getMostValuedCustomers, calculatePopularCurrency } from "../../../../views/dashboard/utils";
+import {
+  getMostValuedCustomers,
+  calculatePopularCurrency,
+} from "../../../../features/dashboard/utils";
 
 const loans = [
   {
@@ -14,7 +17,7 @@ const loans = [
     totalOwed: "$50.00",
     comment: "Finance support for APE",
     __v: 0,
-    pendingPrinciple: "50"
+    pendingPrinciple: "50",
   },
   {
     _id: "60fac21e90714e041a6b3ae6",
@@ -29,7 +32,7 @@ const loans = [
     totalOwed: "$2,315.00",
     comment: "Supporting Finance for APE",
     __v: 0,
-    pendingPrinciple: "$2,315.00"
+    pendingPrinciple: "$2,315.00",
   },
   {
     _id: "60fac4f2245394048402bd90",
@@ -43,7 +46,7 @@ const loans = [
     interestAmount: "UGX 0.00",
     totalOwed: "UGX 2,000,000.00",
     comment: "Land Purchase",
-    __v: 0
+    __v: 0,
   },
   {
     _id: "60facad2404a380489a7d65e",
@@ -57,7 +60,7 @@ const loans = [
     interestAmount: "UGX 0.00",
     totalOwed: "UGX 50,000.00",
     comment: "Support a friend",
-    __v: 0
+    __v: 0,
   },
   {
     _id: "60fc4c55fd45b918920bcfa1",
@@ -71,7 +74,7 @@ const loans = [
     interestAmount: "UGX 16,000,000.00",
     totalOwed: "UGX 24,000,000.00",
     comment: "rand",
-    __v: 0
+    __v: 0,
   },
   {
     _id: "60fc5f38fd45b918920bcfca",
@@ -85,7 +88,7 @@ const loans = [
     interestAmount: "€16,320.00",
     totalOwed: "€20,720.00",
     comment: "random",
-    __v: 0
+    __v: 0,
   },
   {
     _id: "60fc7fe4b8a2ac18969aec0d",
@@ -99,7 +102,7 @@ const loans = [
     interestAmount: "UGX 8,640,000.00",
     totalOwed: "UGX 17,640,000.00",
     comment: "xoxo",
-    __v: 0
+    __v: 0,
   },
   {
     _id: "611a50714437c8163d94d834",
@@ -113,7 +116,7 @@ const loans = [
     months: 0,
     interestAmount: "$0.00",
     totalOwed: "$2,500.00",
-    __v: 0
+    __v: 0,
   },
   {
     _id: "611a5122fd43fa169d790689",
@@ -127,8 +130,8 @@ const loans = [
     months: 12,
     interestAmount: "$1,500.00",
     totalOwed: "$4,000.00",
-    __v: 0
-  }
+    __v: 0,
+  },
 ];
 test("Get most valued customers", () => {
   expect(getMostValuedCustomers(loans, 4300, 3500)).toStrictEqual({
@@ -136,7 +139,7 @@ test("Get most valued customers", () => {
     "Africa power and equipment LTD": 1900,
     "Ivan Nowamukama": 2468.5714285714284,
     "Test User": 4571.428571428572,
-    "Xenic Mark": 19584
+    "Xenic Mark": 19584,
   });
 });
 
@@ -144,7 +147,7 @@ test("Calculate currency Popularity", () => {
   expect(calculatePopularCurrency(loans)).toStrictEqual([
     ["USD", 41],
     ["UGX", 21],
-    ["EUR", 38]
+    ["EUR", 38],
   ]);
 });
 

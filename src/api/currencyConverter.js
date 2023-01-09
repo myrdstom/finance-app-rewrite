@@ -6,14 +6,14 @@ const options = (from = "EUR", to = "UGX") => ({
   params: { format: "json", from, to, amount: "3500" },
   headers: {
     "x-rapidapi-key": process.env.REACT_APP_RAPID_API_KEY,
-    "x-rapidapi-host": process.env.REACT_APP_RAPID_API_HOST
-  }
+    "x-rapidapi-host": process.env.REACT_APP_RAPID_API_HOST,
+  },
 });
 
 export const getCurrencyRates = async (from, to) =>
   axios
     .request(options(from, to))
-    .then(response => response.data.rates[to].rate)
-    .catch(error => {
+    .then((response) => response.data.rates[to].rate)
+    .catch((error) => {
       console.error(error);
     });

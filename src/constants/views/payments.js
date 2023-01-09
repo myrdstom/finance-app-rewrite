@@ -3,7 +3,7 @@ export const columns = [
   { id: "name", label: "Previous Amount", minWidth: 170 },
   { id: "name", label: "Amount Paid", minWidth: 170 },
   { id: "code", label: "Date Paid", minWidth: 170 },
-  { id: "name", label: "Comment", minWidth: 170 }
+  { id: "name", label: "Comment", minWidth: 170 },
 ];
 
 export const section = "Payment";

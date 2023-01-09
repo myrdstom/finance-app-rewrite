@@ -6,15 +6,16 @@ const initialState = {
   payment: {},
   error: "",
   delete: false,
-  loading: false
+  loading: false,
 };
 
+// eslint-disable-next-line default-param-last
 const paymentsReducer = (state = initialState, action) => {
   switch (action.type) {
     case loadingActions.LOADING_DATA:
       return {
         ...state,
-        loading: true
+        loading: true,
       };
     case paymentActionTypes.GET_ALL_PAYMENTS:
       return {
@@ -23,7 +24,7 @@ const paymentsReducer = (state = initialState, action) => {
         payment: {},
         error: {},
         loading: false,
-        delete: false
+        delete: false,
       };
 
     case paymentActionTypes.ADD_A_PAYMENT:
@@ -33,7 +34,7 @@ const paymentsReducer = (state = initialState, action) => {
         payment: action.payload,
         error: {},
         loading: false,
-        delete: false
+        delete: false,
       };
     default:
       return state;

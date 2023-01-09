@@ -17,6 +17,7 @@
   "rules": {
     "prettier/prettier": "error",
     "arrow-parens": "off",
+    "react/function-component-definition": "off",
     "react/jsx-filename-extension": 0,
     "react/destructuring-assignment": 0,
     "quotes": [2, "double"],
@@ -60,7 +61,8 @@
     "jest/no-focused-tests": "error",
     "jest/no-identical-title": "error",
     "jest/prefer-to-have-length": "warn",
-    "jest/valid-expect": "error"
+    "jest/valid-expect": "error",
+    "no-restricted-export": "off"
   },
   "ignorePatterns": ["src/components/charts/*"]
 }
