@@ -4,26 +4,26 @@ export const successfulClientsEvent = {
   clients: client,
   client: {},
   error: {},
-  delete: false
+  delete: false,
 };
 
 export const successfulClientEvent = {
   clients: [],
   client,
   error: {},
-  delete: false
+  delete: false,
 };
 
 export const deleteClientEvent = {
   clients: [],
   client: {},
   error: "",
-  delete: true
+  delete: true,
 };
 
 export const failedClientEvent = {
   clients: [],
   client: {},
   error: undefined,
-  delete: false
+  delete: false,
 };

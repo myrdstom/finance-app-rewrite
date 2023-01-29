@@ -7,13 +7,16 @@ export const COLORS = {
   WHITE: "#fff",
   LIGHT_BLUE: "#32b8cb",
   BLUE: "#0035C7",
-  RED: "#dd4b39"
+  RED: "#dd4b39",
+  LIGHT_RED: "#ee475b",
+  MEDIUM_RED: "#808080;",
+  SKY_BLUE: "#4a90e2",
 };
 
 export const FONT = {
   // Define available font-families to be used throughout the app
   FAMILY: {
-    POPPINS: ["Poppins", "sans-serif"].join(",")
+    POPPINS: ["Poppins", "sans-serif"].join(","),
   },
   LINE_HEIGHT: "136.4%",
   // Define font weights that would be used throughout the app
@@ -22,7 +25,7 @@ export const FONT = {
     REGULAR: 400,
     MEDIUM: 500,
     SEMIBOLD: 600,
-    BOLD: 700
+    BOLD: 700,
   },
   // Define font sizes that would be used throughout the app in rem
   // the numbers on the left indicates the px equivalent of the rem values
@@ -41,7 +44,7 @@ export const FONT = {
     12: "0.75rem",
     10: "0.625rem",
     9: "0.563rem",
-    8: "0.5rem"
+    8: "0.5rem",
   },
   LINE_HEIGHTS: {
     49: "3.063rem",
@@ -55,11 +58,11 @@ export const FONT = {
     14: "0.875rem",
     13: "0.813rem",
     12: "0.75rem",
-    11: "0.688rem"
+    11: "0.688rem",
   },
   STYLE: {
-    ITALIC: "italic"
-  }
+    ITALIC: "italic",
+  },
 };
 
 export const theme = createTheme({
@@ -68,50 +71,51 @@ export const theme = createTheme({
     h1: {
       fontSize: FONT.SIZES[30],
       lineHeight: FONT.LINE_HEIGHT,
-      fontWeight: FONT.WEIGHT.MEDIUM
+      fontWeight: FONT.WEIGHT.MEDIUM,
     },
     h2: {
       fontSize: FONT.SIZES[24],
       lineHeight: FONT.LINE_HEIGHT,
-      fontWeight: FONT.WEIGHT.MEDIUM
+      fontWeight: FONT.WEIGHT.MEDIUM,
+      color: COLORS.MEDIUM_RED,
     },
     h3: {
       fontSize: FONT.SIZES[22],
       lineHeight: FONT.LINE_HEIGHT,
-      fontWeight: FONT.WEIGHT.BOLD
+      fontWeight: FONT.WEIGHT.BOLD,
     },
     h4: {
       fontSize: FONT.SIZES[20],
       lineHeight: FONT.LINE_HEIGHT,
-      fontWeight: FONT.WEIGHT.REGULAR
+      fontWeight: FONT.WEIGHT.REGULAR,
     },
     h5: {
       fontSize: FONT.SIZES[16],
       lineHeight: FONT.LINE_HEIGHT,
-      fontWeight: FONT.WEIGHT.REGULAR
+      fontWeight: FONT.WEIGHT.REGULAR,
     },
     h6: {
       fontSize: FONT.SIZES[14],
       lineHeight: FONT.LINE_HEIGHT,
-      fontWeight: FONT.WEIGHT.REGULAR
+      fontWeight: FONT.WEIGHT.REGULAR,
     },
     w1: {
       fontSize: FONT.SIZES[13],
       fontWeight: FONT.WEIGHT.SEMIBOLD,
       lineHeight: FONT.LINE_HEIGHT,
-      color: COLORS.YELLOW
+      color: COLORS.YELLOW,
     },
     w2: {
       fontSize: FONT.SIZES[12],
       fontWeight: FONT.WEIGHT.BOLD,
       lineHeight: FONT.LINE_HEIGHT,
-      color: COLORS.BLUE
+      color: COLORS.BLUE,
     },
     w3: {
       fontSize: FONT.SIZES[11],
       fontWeight: FONT.WEIGHT.SEMIBOLD,
       lineHeight: FONT.LINE_HEIGHT,
-      color: COLORS.BLUE
-    }
-  }
+      color: COLORS.BLUE,
+    },
+  },
 });

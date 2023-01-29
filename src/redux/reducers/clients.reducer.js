@@ -4,9 +4,10 @@ export const initialState = {
   clients: [],
   client: {},
   error: "",
-  delete: false
+  delete: false,
 };
 
+// eslint-disable-next-line default-param-last
 const clientReducer = (state = initialState, action) => {
   switch (action.type) {
     case clientActionTypes.GET_ALL_CLIENTS:
@@ -15,7 +16,7 @@ const clientReducer = (state = initialState, action) => {
         clients: action.payload,
         client: {},
         error: {},
-        delete: false
+        delete: false,
       };
 
     case clientActionTypes.GET_CLIENT:
@@ -24,7 +25,7 @@ const clientReducer = (state = initialState, action) => {
         clients: [],
         client: action.payload,
         error: {},
-        delete: false
+        delete: false,
       };
     case clientActionTypes.ADD_A_CLIENT:
       return {
@@ -32,12 +33,12 @@ const clientReducer = (state = initialState, action) => {
         clients: [],
         client: action.payload,
         error: {},
-        delete: false
+        delete: false,
       };
     case clientActionTypes.DELETE_A_CLIENT:
       return {
         ...state,
-        delete: true
+        delete: true,
       };
     case clientActionTypes.CLIENT_REQUEST_FAILED:
       return {
@@ -45,7 +46,7 @@ const clientReducer = (state = initialState, action) => {
         clients: [],
         client: {},
         error: action.payload,
-        delete: false
+        delete: false,
       };
     default:
       return state;

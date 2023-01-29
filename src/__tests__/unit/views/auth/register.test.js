@@ -1,7 +1,7 @@
 import React from "react";
 import * as reactRedux from "react-redux";
 import { fireEvent, render, screen } from "@testing-library/react";
-import RegisterView from "../../../../views/auth/registration";
+import RegisterView from "../../../../features/auth/registration";
 import { RenderWithRouterMatch } from "../../../test-utils";
 import { user } from "../../../__fixtures__/user";
 
@@ -31,7 +31,9 @@ describe("Registration Tests", () => {
     fireEvent.change(lastName, { target: { value: user.lastName } });
     fireEvent.change(email, { target: { value: user.email } });
     fireEvent.change(password, { target: { value: user.password } });
-    fireEvent.change(confirmPassword, { target: { value: user.confirmPassword } });
+    fireEvent.change(confirmPassword, {
+      target: { value: user.confirmPassword },
+    });
     const button = screen.getByRole("button", { name: "Sign Up" });
     fireEvent.click(button);
   });

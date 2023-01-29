@@ -13,5 +13,5 @@ export const loans = {
   interestAmount: "$1,875.00",
   totalOwed: "$4,375.00",
   comment: "Bridge Financing shortfall",
-  __v: 0
+  __v: 0,
 };

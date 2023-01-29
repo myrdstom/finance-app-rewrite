@@ -2,25 +2,25 @@ export const loanActionTypes = {
   GET_ALL_LOANS: "GET_ALL_LOANS",
   GET_LOAN: "GET_LOAN",
   ADD_A_LOAN: "ADD_A_LOAN",
-  LOAN_REQUEST_FAILED: "LOAN_REQUEST_FAILED"
+  LOAN_REQUEST_FAILED: "LOAN_REQUEST_FAILED",
 };
 
-export const getLoansAction = payload => ({
+export const getLoansAction = (payload) => ({
   type: loanActionTypes.GET_ALL_LOANS,
-  payload
+  payload,
 });
 
-export const getALoanAction = payload => ({
+export const getALoanAction = (payload) => ({
   type: loanActionTypes.GET_LOAN,
-  payload
+  payload,
 });
 
-export const addLoanAction = payload => ({
+export const addLoanAction = (payload) => ({
   type: loanActionTypes.ADD_A_LOAN,
-  payload
+  payload,
 });
 
-export const loanActionFailed = payload => ({
+export const loanActionFailed = (payload) => ({
   type: loanActionTypes.LOAN_REQUEST_FAILED,
-  payload
+  payload,
 });

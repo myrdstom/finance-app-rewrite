@@ -6,10 +6,12 @@ import store from "../redux/combineStore";
 
 const history = createMemoryHistory();
 
-export const RenderWithRouterMatch = ({ children }) => (
-  <Provider store={store}>
-    <Router history={history}>
-      <Switch>{children}</Switch>
-    </Router>
-  </Provider>
-);
+export function RenderWithRouterMatch({ children }) {
+  return (
+    <Provider store={store}>
+      <Router history={history}>
+        <Switch>{children}</Switch>
+      </Router>
+    </Provider>
+  );
+}

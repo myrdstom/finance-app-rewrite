@@ -6,15 +6,16 @@ const initialState = {
   loan: {},
   error: "",
   delete: false,
-  loading: false
+  loading: false,
 };
 
+// eslint-disable-next-line default-param-last
 const loansReducer = (state = initialState, action) => {
   switch (action.type) {
     case loadingActions.LOADING_DATA:
       return {
         ...state,
-        loading: true
+        loading: true,
       };
     case loanActionTypes.GET_ALL_LOANS:
       return {
@@ -23,7 +24,7 @@ const loansReducer = (state = initialState, action) => {
         loan: {},
         error: {},
         loading: false,
-        delete: false
+        delete: false,
       };
 
     case loanActionTypes.GET_LOAN:
@@ -33,7 +34,7 @@ const loansReducer = (state = initialState, action) => {
         loan: action.payload,
         error: {},
         loading: false,
-        delete: false
+        delete: false,
       };
     case loanActionTypes.ADD_A_LOAN:
       return {
@@ -42,7 +43,7 @@ const loansReducer = (state = initialState, action) => {
         loan: action.payload,
         error: {},
         loading: false,
-        delete: false
+        delete: false,
       };
     default:
       return state;

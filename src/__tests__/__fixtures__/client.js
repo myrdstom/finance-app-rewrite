@@ -4,5 +4,5 @@ export const client = {
   city: "kampala",
   email: "info@ape.com",
   number: "+256777777",
-  country: "Uganda"
+  country: "Uganda",
 };

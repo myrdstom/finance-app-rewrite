@@ -1,26 +1,30 @@
 import { instance } from "../../../../config/client";
-import { getPaymentsAction, addPaymentAction, paymentActionFailed } from "./payments.types";
+import {
+  getPaymentsAction,
+  addPaymentAction,
+  paymentActionFailed,
+} from "./payments.types";
 import { loadingAction } from "../../loader/loading.actions";
 
-export const getPayments = id => dispatch => {
+export const getPayments = (id) => (dispatch) => {
   dispatch(loadingAction());
   instance
     .get(`payment/loans/${id}`)
-    .then(res => {
+    .then((res) => {
       dispatch(getPaymentsAction(res.data));
     })
-    .catch(err => {
+    .catch((err) => {
       dispatch(paymentActionFailed(err.response.data));
     });
 };
 
-export const addPayment = (loanData, id) => dispatch => {
+export const addPayment = (loanData, id) => (dispatch) => {
   instance
     .post(`payment/${id}`, loanData)
-    .then(res => {
+    .then((res) => {
       dispatch(addPaymentAction(res.data));
     })
-    .catch(err => {
+    .catch((err) => {
       dispatch(paymentActionFailed(err.response.data));
     });
 };

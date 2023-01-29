@@ -1,11 +1,12 @@
-import { authActionTypes } from "../actions/auth/actions/auth.types";
+import { authActionTypes } from "./actions/auth.types";
 
 const initialState = {
   isAuthenticated: false,
   error: "",
-  currentUser: {}
+  currentUser: {},
 };
 
+// eslint-disable-next-line default-param-last
 const authReducer = (state = initialState, action) => {
   switch (action.type) {
     case authActionTypes.LOGIN_USER:
@@ -13,7 +14,7 @@ const authReducer = (state = initialState, action) => {
         ...state,
         isAuthenticated: true,
         error: {},
-        currentUser: action.payload
+        currentUser: action.payload,
       };
 
     case authActionTypes.LOGIN_FAILED:
@@ -21,7 +22,7 @@ const authReducer = (state = initialState, action) => {
         ...state,
         isAuthenticated: false,
         currentUser: {},
-        error: action.payload
+        error: action.payload,
       };
 
     case authActionTypes.REGISTER_USER:
@@ -29,20 +30,20 @@ const authReducer = (state = initialState, action) => {
         ...state,
         isAuthenticated: true,
         currentUser: action.payload.user,
-        error: {}
+        error: {},
       };
     case authActionTypes.REGISTER_FAILED:
       return {
         ...state,
         error: action.payload,
-        currentUser: {}
+        currentUser: {},
       };
     case authActionTypes.LOGOUT_USER:
       return {
         ...state,
         isAuthenticated: false,
         error: {},
-        currentUser: {}
+        currentUser: {},
       };
     default:
       return state;

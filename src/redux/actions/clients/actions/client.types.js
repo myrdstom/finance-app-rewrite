@@ -4,35 +4,35 @@ export const clientActionTypes = {
   ADD_A_CLIENT: "ADD_A_CLIENT",
   EDIT_A_CLIENT: "EDIT_A_CLIENT",
   DELETE_A_CLIENT: "DELETE_A_CLIENT",
-  CLIENT_REQUEST_FAILED: "CLIENT_REQUEST_FAILED"
+  CLIENT_REQUEST_FAILED: "CLIENT_REQUEST_FAILED",
 };
 
-export const getClientsAction = payload => ({
+export const getClientsAction = (payload) => ({
   type: clientActionTypes.GET_ALL_CLIENTS,
-  payload
+  payload,
 });
 
-export const getAClientAction = payload => ({
+export const getAClientAction = (payload) => ({
   type: clientActionTypes.GET_CLIENT,
-  payload
+  payload,
 });
 
-export const addClientAction = payload => ({
+export const addClientAction = (payload) => ({
   type: clientActionTypes.ADD_A_CLIENT,
-  payload
+  payload,
 });
 
-export const editClientAction = payload => ({
+export const editClientAction = (payload) => ({
   type: clientActionTypes.EDIT_A_CLIENT,
-  payload
+  payload,
 });
 
-export const deleteClientAction = payload => ({
+export const deleteClientAction = (payload) => ({
   type: clientActionTypes.DELETE_A_CLIENT,
-  payload
+  payload,
 });
 
-export const clientActionFailed = payload => ({
+export const clientActionFailed = (payload) => ({
   type: clientActionTypes.CLIENT_REQUEST_FAILED,
-  payload
+  payload,
 });

@@ -8,7 +8,7 @@ export const columns = [
   { id: "name", label: "Interest Earned", minWidth: 100 },
   { id: "name", label: "Total Owed", minWidth: 100 },
   { id: "name", label: "Comment", minWidth: 100 },
-  { id: "name", label: "", minWidth: 100 }
+  { id: "name", label: "", minWidth: 100 },
 ];
 
 export const section = "Loan";

@@ -2,7 +2,7 @@ import React from "react";
 import MatchMediaMock from "jest-matchmedia-mock";
 import { render } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
-import AddPaymentsView from "../../../../views/payments/add-payments-view";
+import AddPaymentsView from "../../../../features/payments/add-payments-view";
 import { RenderWithRouterMatch } from "../../../test-utils";
 
 let matchMedia;

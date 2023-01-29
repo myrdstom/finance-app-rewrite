@@ -5,56 +5,56 @@ import {
   deleteClientAction,
   addClientAction,
   getAClientAction,
-  editClientAction
+  editClientAction,
 } from "./client.types";
 
-export const getClients = () => dispatch => {
+export const getClients = () => (dispatch) => {
   instance
     .get("client/manager/email")
-    .then(res => {
+    .then((res) => {
       dispatch(getClientsAction(res.data));
     })
-    .catch(err => {
+    .catch((err) => {
       dispatch(clientActionFailed(err.response.data));
     });
 };
 
-export const getClient = clientId => dispatch => {
+export const getClient = (clientId) => (dispatch) => {
   instance
     .get(`client/${clientId}`)
-    .then(res => {
+    .then((res) => {
       dispatch(getAClientAction(res.data));
     })
-    .catch(err => {
+    .catch((err) => {
       dispatch(clientActionFailed(err.response.data));
     });
 };
 
-export const addClient = clientData => dispatch => {
+export const addClient = (clientData) => (dispatch) => {
   instance
     .post("client", clientData)
-    .then(res => {
+    .then((res) => {
       dispatch(addClientAction(res.data));
     })
-    .catch(err => {
+    .catch((err) => {
       dispatch(clientActionFailed(err.response.data));
     });
 };
 
-export const editClient = (jsonData, clientId) => dispatch => {
+export const editClient = (jsonData, clientId) => (dispatch) => {
   instance
     .put(`client/${clientId}`, jsonData)
     .then(() => dispatch(editClientAction()))
-    .catch(err => {
+    .catch((err) => {
       dispatch(clientActionFailed(err.response.data));
     });
 };
 
-export const deleteClient = clientId => dispatch => {
+export const deleteClient = (clientId) => (dispatch) => {
   instance
     .delete(`client/${clientId}`)
     .then(() => dispatch(deleteClientAction()))
-    .catch(err => {
+    .catch((err) => {
       dispatch(clientActionFailed(err.response.data));
     });
 };
