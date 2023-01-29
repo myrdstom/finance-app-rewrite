@@ -1,7 +1,4 @@
-import {
-  getMostValuedCustomers,
-  calculatePopularCurrency,
-} from "../../../../features/dashboard/utils";
+import { getMostValuedCustomers, calculatePopularCurrency } from "./utils";
 
 const loans = [
   {

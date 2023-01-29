@@ -1,9 +1,9 @@
 import React from "react";
 import { Form } from "formik";
-import { Link } from "react-router-dom";
-import { Button, Grid, Typography } from "@mui/material";
+import { Grid, Link, Typography } from "@mui/material";
 import { TextField } from "elements/TextField";
-import { COLORS } from "../../../styles/theme";
+import { CustomButton } from "elements/CustomButton";
+import { COLORS } from "styles/theme";
 
 function LoginForm({ formik }) {
   return (
@@ -33,12 +33,18 @@ function LoginForm({ formik }) {
           />
         </Grid>
         <Grid item xs={12}>
-          <Button type="submit" fullWidth variant="contained" color="primary">
+          <CustomButton
+            type="submit"
+            fullWidth
+            variant="contained"
+            background={COLORS.SKY_BLUE}
+            hoverBackground={COLORS.BLUE}
+          >
             LogIn
-          </Button>
+          </CustomButton>
         </Grid>
         <Grid item xs={12}>
-          <Link to="/" style={{ textDecoration: "none" }}>
+          <Link underline="none" href="/register">
             <Typography variant="h6" sx={{ color: COLORS.SKY_BLUE }}>
               Do not have an account? Sign Up
             </Typography>
