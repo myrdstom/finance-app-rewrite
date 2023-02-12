@@ -1,5 +1,5 @@
 import { rest } from "msw";
-import currencyData from "./dashboard.data.json";
+import currencyData from "./Dashboard.data.json";
 
 export const useDashboardHandlers = [
   rest.get(

@@ -28,7 +28,7 @@ import {
   Apps as AppsIcon,
 } from "@mui/icons-material";
 import { CustomButton } from "elements/CustomButton";
-import { logoutUser } from "features/auth/actions/auth.actions";
+import { logoutUser } from "features/Auth/actions/auth.actions";
 import { SMALL_SCREEN_MESSAGE } from "constants/components/content-ui/content-ui";
 import { COLORS } from "styles/theme";
 import {
@@ -140,13 +140,17 @@ const ResponsiveDrawer = ({ children }) => {
                 <Stack justifyContent="center">
                   <Stack
                     flexDirection="row"
-                    justifyContent="space-between"
+                    justifyContent="space-evenly"
                     sx={{ width: "130px" }}
                   >
                     <AccountCircleIcon
                       sx={{ color: COLORS.LIGHT_RED, marginTop: "0.313rem" }}
                     />
-                    <Typography mt={0.5} sx={{ color: COLORS.LIGHT_RED }}>
+                    <Typography
+                      variant="w2"
+                      mt={1.2}
+                      sx={{ color: COLORS.LIGHT_RED }}
+                    >
                       {user}
                     </Typography>
                   </Stack>

@@ -113,10 +113,21 @@ export const theme = createTheme({
       color: COLORS.BLUE,
     },
     w3: {
-      fontSize: FONT.SIZES[11],
+      fontSize: FONT.SIZES[10],
       fontWeight: FONT.WEIGHT.SEMIBOLD,
       lineHeight: FONT.LINE_HEIGHT,
       color: COLORS.BLUE,
+    },
+    w4: {
+      fontSize: FONT.SIZES[11],
+      fontWeight: FONT.WEIGHT.LIGHT,
+      lineHeight: FONT.LINE_HEIGHT,
+      color: COLORS.BLUE,
+    },
+    w5: {
+      fontSize: FONT.SIZES[13],
+      fontWeight: FONT.WEIGHT.SEMIBOLD,
+      lineHeight: FONT.LINE_HEIGHT,
     },
   },
 });

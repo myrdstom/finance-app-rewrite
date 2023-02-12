@@ -1,8 +1,9 @@
 import React from "react";
 import { useRoutes } from "react-router-dom";
-import Login from "features/auth/login";
-import Registration from "features/auth/registration";
-import Dashboard from "features/dashboard";
+import Login from "features/Auth/Login";
+import Registration from "features/Auth/Registration";
+import Dashboard from "features/Dashboard";
+import GetClients from "features/Clients/GetClients";
 
 const Routes = () =>
   useRoutes([
@@ -17,6 +18,10 @@ const Routes = () =>
     {
       path: "/dashboard",
       element: <Dashboard />,
+    },
+    {
+      path: "/clients",
+      element: <GetClients />,
     },
   ]);
 export default Routes;

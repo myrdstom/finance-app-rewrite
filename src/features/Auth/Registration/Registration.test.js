@@ -2,7 +2,7 @@ import React from "react";
 import { screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { RenderWithRouterMatch } from "__tests__/setupTests";
-import Registration from "features/auth/registration";
+import Registration from "features/Auth/Registration";
 import { user } from "__tests__/__fixtures__/user";
 
 describe("Registration Component", () => {
