@@ -1,0 +1,3 @@
+paths:
+  - src/features/auth/login/login.data.json
+  - src/features/auth/registration/register.data.json

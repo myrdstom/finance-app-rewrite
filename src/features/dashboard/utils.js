@@ -18,12 +18,9 @@ export const getMostValuedCustomers = (loans, euroRate, dollarRate) => {
     }
   });
 
-  const sortable = Object.fromEntries(
+  return Object.fromEntries(
     Object.entries(largestClients).sort(([, a], [, b]) => b - a)
   );
-
-  console.warn(sortable);
-  return sortable;
 };
 
 const convertCurrencyToInteger = (interestAmount) => {

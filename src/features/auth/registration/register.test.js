@@ -1,40 +1,26 @@
 import React from "react";
-import * as reactRedux from "react-redux";
-import { fireEvent, render, screen } from "@testing-library/react";
-import { RenderWithRouterMatch } from "xx__tests__/test-utils";
+import { screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
+import { RenderWithRouterMatch } from "__tests__/setupTests";
+import Registration from "features/auth/registration";
 import { user } from "__tests__/__fixtures__/user";
-import RegisterView from "./index";
 
-describe("Registration Tests", () => {
-  const useSelectorMock = jest.spyOn(reactRedux, "useSelector");
-  const useDispatchMock = jest.spyOn(reactRedux, "useDispatch");
+describe("Registration Component", () => {
+  test("it should register a user", async () => {
+    const userSetup = userEvent.setup();
+    const { email, password, confirmPassword, firstName, lastName } = user;
+    RenderWithRouterMatch(<Registration />);
 
-  beforeEach(() => {
-    useSelectorMock.mockClear();
-    useDispatchMock.mockClear();
-  });
-
-  test("Registers a new user", async () => {
-    render(
-      <RenderWithRouterMatch>
-        <RegisterView />
-      </RenderWithRouterMatch>
-    );
-
+    expect(screen.getByText("Register a new account.")).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /Sign Up/i })).toBeEnabled();
-    const email = screen.getByLabelText("Email Address");
-    const password = screen.getByLabelText("Password");
-    const firstName = screen.getByLabelText("First Name");
-    const lastName = screen.getByLabelText("Last Name");
-    const confirmPassword = screen.getByLabelText("Confirm Password");
-    fireEvent.change(firstName, { target: { value: user.firstName } });
-    fireEvent.change(lastName, { target: { value: user.lastName } });
-    fireEvent.change(email, { target: { value: user.email } });
-    fireEvent.change(password, { target: { value: user.password } });
-    fireEvent.change(confirmPassword, {
-      target: { value: user.confirmPassword },
-    });
-    const button = screen.getByRole("button", { name: "Sign Up" });
-    fireEvent.click(button);
+    await userSetup.type(screen.getByLabelText(/First Name/i), firstName);
+    await userSetup.type(screen.getByLabelText(/Last Name/i), lastName);
+    await userSetup.type(screen.getByLabelText(/Email Address/i), email);
+    await userSetup.type(screen.getByLabelText(/Pasword/i), password);
+    await userSetup.type(
+      screen.getByLabelText(/Confirm Password/i),
+      confirmPassword
+    );
+    await userSetup.click(screen.getByRole("button", { name: /Sign Up/i }));
   });
 });
