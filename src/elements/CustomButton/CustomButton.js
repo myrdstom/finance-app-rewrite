@@ -6,17 +6,19 @@ function CustomButton({
   width,
   background,
   fontcolor,
-  hoverbackground,
+  hoverBackground,
   border,
+  variant,
   ...props
 }) {
   return (
     <StyledButton
       width={width}
       background={background}
-      hoverbackground={hoverbackground}
+      hoverBackground={hoverBackground}
       fontcolor={fontcolor}
       border={border}
+      variant={variant}
       {...props}
     >
       {children}

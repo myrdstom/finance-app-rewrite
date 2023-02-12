@@ -11,6 +11,7 @@ export const COLORS = {
   LIGHT_RED: "#ee475b",
   MEDIUM_RED: "#808080;",
   SKY_BLUE: "#4a90e2",
+  BLACK: "#000",
 };
 
 export const FONT = {

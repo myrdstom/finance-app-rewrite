@@ -1,9 +1,9 @@
 import React from "react";
 import { Form } from "formik";
-import { Link } from "react-router-dom";
-import { Button, Grid, Typography } from "@mui/material";
+import { Grid, Link, Typography } from "@mui/material";
+import { COLORS } from "styles/theme";
 import { TextField } from "elements/TextField";
-import { COLORS } from "../../../styles/theme";
+import { CustomButton } from "elements/CustomButton";
 
 const RegistrationForm = ({ formik }) => (
   <Form id="loginForm" onSubmit={formik.handleSubmit}>
@@ -71,17 +71,18 @@ const RegistrationForm = ({ formik }) => (
         />
       </Grid>
       <Grid item xs={12}>
-        <Button
+        <CustomButton
           type="submit"
           fullWidth
           variant="contained"
-          sx={{ backgroundColor: COLORS.SKY_BLUE }}
+          background={COLORS.SKY_BLUE}
+          hoverBackground={COLORS.BLUE}
         >
           Sign Up
-        </Button>
+        </CustomButton>
       </Grid>
       <Grid item xs={12}>
-        <Link to="/" style={{ textDecoration: "none" }}>
+        <Link underline="none" href="/">
           <Typography variant="h6" sx={{ color: COLORS.SKY_BLUE }}>
             Already have an account? Sign in
           </Typography>

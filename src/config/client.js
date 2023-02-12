@@ -12,9 +12,9 @@ export const instance = axios.create({
 const manageToken = (config) => {
   const newConfig = { ...config };
   if (localStorage.jwtToken) {
-    newConfig.headers.common.Authorization = localStorage.jwtToken;
+    newConfig.headers.Authorization = localStorage.jwtToken;
   } else {
-    delete newConfig.headers.common.Authorization;
+    delete newConfig.headers.Authorization;
   }
   return newConfig;
 };
@@ -25,8 +25,8 @@ instance.interceptors.request.use((config) => {
     currentConfig.headers = {};
     return manageToken(currentConfig);
   }
-  if (!currentConfig.headers.common) {
-    currentConfig.headers.common = {};
+  if (!currentConfig.headers.Authorization) {
+    currentConfig.headers.Authorization = {};
     return manageToken(currentConfig);
   }
   return manageToken(currentConfig);

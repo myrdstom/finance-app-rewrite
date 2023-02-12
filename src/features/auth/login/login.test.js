@@ -1,9 +1,9 @@
 import React from "react";
 import * as reactRedux from "react-redux";
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
-import { Login } from "../../../../features/auth/login";
-import { RenderWithRouterMatch } from "../../../test-utils";
-import { user } from "../../../__fixtures__/user";
+import { RenderWithRouterMatch } from "__tests__/test-utils";
+import { user } from "__tests__/__fixtures__/user";
+import Login from "./Login";
 
 describe("Login Tests", () => {
   const useSelectorMock = jest.spyOn(reactRedux, "useSelector");
