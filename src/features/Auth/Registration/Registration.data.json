@@ -9,6 +9,6 @@
     "__v": 0
   },
   "success": true,
-  "token":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdE5hbWUiOiJQYXVsIiwibGFzdE5hbWUiOiJLYXlvbmdvIiwiZW1haWwiOiJuc2VyZWtvcGF1bEBnbWFpbC5jb20iLCJpYXQiOjE2NzYxNTYxMzIsImV4cCI6MTY3Njc2MDkzMn0.s9Swb4WpJ2opgEY8W99AWbBAVl28ZZ5zHwA794Ys1F0",
+  "token":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdE5hbWUiOiJ0ZXN0IiwibGFzdE5hbWUiOiJ1c2VyIiwiZW1haWwiOiJ0ZXN0dXNlckBnbWFpbC5jb20iLCJpYXQiOjE2NzYyMDkwMDAsImV4cCI6MTY3NjgxMzgwMH0._WQJIqzj4S2VeIqZicfhXZa1HkT97IjrVPC0S4xhEdM",
   "message":"You have successfully registered a user"
 }

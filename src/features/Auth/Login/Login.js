@@ -6,19 +6,16 @@ import { Formik } from "formik";
 import * as Yup from "yup";
 import { Logo } from "components/logo";
 import {
-  CONFIRM_PASSWORD_REQUIRED,
   EMAIL_REQUIRED,
-  FIRST_NAME_REQUIRED,
   INVALID_EMAIL_ADDRESS,
-  LAST_NAME_REQUIRED,
   PASSWORD_REQUIRED,
 } from "constants/views/auth";
-import { registerUser } from "../actions/auth.actions";
+import SnackBar from "elements/SnackBar";
+import { loginUser } from "../actions/auth.actions";
+import LoginForm from "./LoginForm";
 import { Stack } from "../Auth.styles";
-import RegistrationForm from "./RegistrationForm";
-import SnackBar from "../../../elements/SnackBar";
 
-export function Registration() {
+export const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [error, setError] = useState("");
@@ -33,33 +30,22 @@ export function Registration() {
     }
   }, [authState]);
 
-  const defaultValues = {
-    firstName: "",
-    lastName: "",
-    email: "",
-    password: "",
-    confirmPassword: "",
-  };
+  const defaultValues = { email: "", password: "" };
 
   const yupObject = Yup.object({
-    firstName: Yup.string().required(FIRST_NAME_REQUIRED),
-    lastName: Yup.string().required(LAST_NAME_REQUIRED),
     email: Yup.string().email(INVALID_EMAIL_ADDRESS).required(EMAIL_REQUIRED),
     password: Yup.string().required(PASSWORD_REQUIRED),
-    confirmPassword: Yup.string().required(CONFIRM_PASSWORD_REQUIRED),
   });
 
   const handleSubmit = (values) => {
-    const { firstName, lastName, email, password, confirmPassword } = values;
+    const { email, password } = values;
     const jsonData = {
-      firstName,
-      lastName,
       email,
       password,
-      confirmPassword,
     };
-    dispatch(registerUser(jsonData));
+    dispatch(loginUser(jsonData));
   };
+
   return (
     <Container component="main" maxWidth="xs">
       {error.length && (
@@ -73,22 +59,22 @@ export function Registration() {
         </Grid>
         <Grid container justify="flex-start">
           <Typography variant="h2" mt={1}>
-            Sign Up
+            Welcome back
           </Typography>
         </Grid>
         <Typography variant="h6" mt={5} mb={4}>
-          Register a new account.
+          Please enter your email address and password to access your dashboard.
         </Typography>
         <Formik
           initialValues={defaultValues}
           validationSchema={yupObject}
           onSubmit={handleSubmit}
         >
-          {(formik) => <RegistrationForm formik={formik} />}
+          {(formik) => <LoginForm formik={formik} />}
         </Formik>
       </Stack>
     </Container>
   );
-}
+};
 
-export default Registration;
+export default Login;
