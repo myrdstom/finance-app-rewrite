@@ -1,12 +1,21 @@
-import React from "react";
-import { BrowserRouter as Router } from "react-router-dom";
-import { Provider } from "react-redux";
-import store from "../redux/combineStore";
+import { setupServer } from "msw/node";
+import { useLoginHandlers } from "features/auth/login/login.handlers";
+import { useRegistrationHandlers } from "features/auth/registration/register.handlers";
+import { useGetLoanHandlers } from "features/loans/getLoans/loans.handlers";
+import { useDashboardHandlers } from "../features/dashboard/dashboard.handlers";
 
-export function RenderWithRouterMatch({ children }) {
-  return (
-    <Provider store={store}>
-      <Router>{children}</Router>
-    </Provider>
+let server;
+
+export function startServer() {
+  server = setupServer(
+    ...useLoginHandlers,
+    ...useRegistrationHandlers,
+    ...useGetLoanHandlers,
+    ...useDashboardHandlers
   );
+  return server;
 }
+
+// export function getServer() {
+//   return server;
+// }

@@ -6,7 +6,7 @@ function CustomButton({
   width,
   background,
   fontcolor,
-  hoverBackground,
+  hoverbackground,
   border,
   variant,
   ...props
@@ -15,7 +15,7 @@ function CustomButton({
     <StyledButton
       width={width}
       background={background}
-      hoverBackground={hoverBackground}
+      hoverbackground={hoverbackground}
       fontcolor={fontcolor}
       border={border}
       variant={variant}

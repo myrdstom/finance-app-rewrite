@@ -13,8 +13,8 @@ import DashBoardContent from "./DashBoardContent";
 export const Dashboard = () => {
   const dispatch = useDispatch();
   const [valuedCustomers, setValuedCustomers] = useState([]);
-  const [euroRate, setEuroRate] = useState(undefined);
-  const [dollarRate, setDollarRate] = useState(undefined);
+  const [euroRate, setEuroRate] = useState(1.06999);
+  const [dollarRate, setDollarRate] = useState(3700);
   const [currencyDemand, setCurrencyDemand] = useState([]);
   const [monthlyRevenue, setMonthlyRevenue] = useState([]);
   const loans = useSelector((state) => state?.loans.loans);

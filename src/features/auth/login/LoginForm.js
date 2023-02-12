@@ -38,13 +38,13 @@ function LoginForm({ formik }) {
             fullWidth
             variant="contained"
             background={COLORS.SKY_BLUE}
-            hoverBackground={COLORS.BLUE}
+            hoverbackground={COLORS.BLUE}
           >
             LogIn
           </CustomButton>
         </Grid>
         <Grid item xs={12}>
-          <Link underline="none" href="/register">
+          <Link underline="none" href="/register" data-testid="register">
             <Typography variant="h6" sx={{ color: COLORS.SKY_BLUE }}>
               Do not have an account? Sign Up
             </Typography>

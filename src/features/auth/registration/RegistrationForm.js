@@ -6,7 +6,7 @@ import { TextField } from "elements/TextField";
 import { CustomButton } from "elements/CustomButton";
 
 const RegistrationForm = ({ formik }) => (
-  <Form id="loginForm" onSubmit={formik.handleSubmit}>
+  <Form id="registrationForm" onSubmit={formik.handleSubmit}>
     <Grid container spacing={2}>
       <Grid item xs={6}>
         <TextField
@@ -43,7 +43,7 @@ const RegistrationForm = ({ formik }) => (
       </Grid>
       <Grid item xs={12}>
         <TextField
-          label="Password"
+          label="Pasword"
           name="password"
           value={formik.values.password}
           onChange={formik.handleChange}
@@ -51,6 +51,7 @@ const RegistrationForm = ({ formik }) => (
           helperText={formik.touched.password && formik.errors.password}
           id="password"
           type="password"
+          dataTestId="password"
         />
       </Grid>
       <Grid item xs={12}>
@@ -76,7 +77,7 @@ const RegistrationForm = ({ formik }) => (
           fullWidth
           variant="contained"
           background={COLORS.SKY_BLUE}
-          hoverBackground={COLORS.BLUE}
+          hoverbackground={COLORS.BLUE}
         >
           Sign Up
         </CustomButton>

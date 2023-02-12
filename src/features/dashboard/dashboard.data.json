@@ -1,0 +1,19 @@
+{
+  "base_currency_code": "EUR",
+  "base_currency_name": "Euro",
+  "amount": "3500.0000",
+  "updated_date": "2023-02-12",
+  "rates": {
+    "USD": {
+      "currency_name": "United States dollar",
+      "rate": "1.0699",
+      "rate_for_amount": "3744.7694"
+    },
+    "UGX": {
+      "currency_name": "Uganda Shilling",
+      "rate": "3500",
+      "rate_for_amount": "3744.7694"
+    }
+  },
+  "status": "success"
+}

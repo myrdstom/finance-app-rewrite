@@ -1,0 +1,14 @@
+{
+  "user": {
+    "userId": "5qF5Rcowi",
+    "firstName": "Angela",
+    "lastName": "Nakalembe",
+    "email": "angela@gmail.com",
+    "password": "$2a$08$4QY.oVDPDyk8vZFp0pbEW.dZVpsgcxXuTxmtIBryzXqU5jj1hv7Qa",
+    "_id": "63e84f75abbe7792dc4f9aec",
+    "__v": 0
+  },
+  "success": true,
+  "token":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdE5hbWUiOiJQYXVsIiwibGFzdE5hbWUiOiJLYXlvbmdvIiwiZW1haWwiOiJuc2VyZWtvcGF1bEBnbWFpbC5jb20iLCJpYXQiOjE2NzYxNTYxMzIsImV4cCI6MTY3Njc2MDkzMn0.s9Swb4WpJ2opgEY8W99AWbBAVl28ZZ5zHwA794Ys1F0",
+  "message":"You have successfully registered a user"
+}

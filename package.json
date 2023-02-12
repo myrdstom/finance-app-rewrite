@@ -10,7 +10,7 @@
     "@mui/system": "^5.11.2",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
+    "@testing-library/user-event": "^14.4.3",
     "axios": "^1.2.2",
     "dayjs": "^1.11.7",
     "eslint-plugin-cypress": "^2.12.1",
@@ -32,8 +32,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --testPathPattern src/__tests__/unit --env=jsdom --coverage jest --silent",
-    "one-test": "react-scripts test --testPathPattern src/features/auth/login/login.test.js --env=jsdom --coverage jest --silent false",
+    "test": "react-scripts test --testPathPattern src/features --env=jsdom --coverage jest --silent",
+    "one-test": "react-scripts test --testPathPattern src/features/dashboard --env=jsdom jest",
     "cypress": "cypress open",
     "eject": "react-scripts eject",
     "lint:js": "eslint src --fix",
@@ -74,10 +74,16 @@
     "eslint-plugin-react": "^7.31.11",
     "eslint-plugin-react-hooks": "^4.6.0",
     "husky": "^8.0.3",
+    "jest-matchmedia-mock": "^1.1.0",
     "lint-staged": "^13.1.0",
-    "prettier": "^2.8.2"
+    "msw": "^1.0.1",
+    "prettier": "^2.8.2",
+    "redux-mock-store": "^1.5.4"
   },
   "jest": {
+    "moduleNameMapper": {
+      "axios": "axios/dist/node/axios.cjs"
+    },
     "coverageThreshold": {
       "global": {
         "branches": 50,
