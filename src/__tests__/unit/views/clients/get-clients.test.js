@@ -2,7 +2,7 @@ import React from "react";
 import MatchMediaMock from "jest-matchmedia-mock";
 import { render, screen } from "@testing-library/react";
 import * as reactRedux from "react-redux";
-import ClientsView from "../../../../features/Clients/get-clients-view/get-clients-view";
+import ClientsView from "../../../../features/clients/get-clients-view/get-clients-view";
 import { RenderWithRouterMatch } from "../../../test-utils";
 import { client } from "../../../__fixtures__/client";
 
