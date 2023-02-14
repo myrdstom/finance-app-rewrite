@@ -9,10 +9,15 @@ export const COLORS = {
   BLUE: "#0035C7",
   RED: "#dd4b39",
   LIGHT_RED: "#ee475b",
-  MEDIUM_RED: "#808080;",
+  MEDIUM_RED: "#808080",
   SKY_BLUE: "#4a90e2",
   BLACK: "#000",
+  METAL_GREY: "#97a2a2",
 };
+
+export const ONE_REM_TO_PX = 16;
+
+export const CUSTOM_MODAL_MARGIN_IN_REM = 4;
 
 export const FONT = {
   // Define available font-families to be used throughout the app
@@ -128,6 +133,39 @@ export const theme = createTheme({
       fontSize: FONT.SIZES[13],
       fontWeight: FONT.WEIGHT.SEMIBOLD,
       lineHeight: FONT.LINE_HEIGHT,
+    },
+    w6: {
+      fontSize: FONT.SIZES[11],
+      fontWeight: FONT.WEIGHT.LIGHT,
+      lineHeight: FONT.LINE_HEIGHT,
+    },
+    w7: {
+      fontSize: FONT.SIZES[11],
+      fontWeight: FONT.WEIGHT.REGULAR,
+      lineHeight: FONT.LINE_HEIGHT,
+      overflow: "hidden",
+      textOverflow: "ellipsis",
+    },
+    w8: {
+      fontSize: FONT.SIZES[14],
+      lineHeight: FONT.LINE_HEIGHT,
+      fontWeight: FONT.WEIGHT.BOLD,
+    },
+    w9: {
+      fontSize: FONT.SIZES[11],
+      fontWeight: FONT.WEIGHT.REGULAR,
+      lineHeight: FONT.LINE_HEIGHT,
+      color: COLORS.BLUE,
+    },
+    w10: {
+      fontSize: FONT.SIZES[22],
+      fontWeight: FONT.WEIGHT.BOLD,
+      lineHeight: FONT.LINE_HEIGHTS[30],
+    },
+    w11: {
+      fontSize: FONT.SIZES[12],
+      fontWeight: FONT.WEIGHT.MEDIUM,
+      lineHeight: FONT.LINE_HEIGHTS[16],
     },
   },
 });
