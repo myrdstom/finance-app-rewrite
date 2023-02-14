@@ -1,9 +1,10 @@
 import React from "react";
 import { useRoutes } from "react-router-dom";
-import Login from "features/Auth/Login";
-import Registration from "features/Auth/Registration";
-import Dashboard from "features/Dashboard";
-import GetClients from "features/Clients/GetClients";
+import Login from "features/auth/login";
+import Registration from "features/auth/registration";
+import Dashboard from "features/dashboard";
+import GetClients from "features/clients/getClients";
+import GetLoans from "features/loans/getLoans";
 
 const Routes = () =>
   useRoutes([
@@ -22,6 +23,10 @@ const Routes = () =>
     {
       path: "/clients",
       element: <GetClients />,
+    },
+    {
+      path: "/loans",
+      element: <GetLoans />,
     },
   ]);
 export default Routes;

@@ -1,7 +1,7 @@
 import React from "react";
 import MatchMediaMock from "jest-matchmedia-mock";
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
-import AddLoanView from "../../../../features/Loans/add-loans-view";
+import AddLoanView from "../../../../features/loans/add-loans-view";
 import { RenderWithRouterMatch } from "../../../test-utils";
 import { loans } from "../../../__fixtures__/loans";
 

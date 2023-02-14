@@ -33,7 +33,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --testPathPattern src/features --env=jsdom --coverage jest --silent",
-    "one-test": "react-scripts test --testPathPattern src/features/Dashboard --env=jsdom jest",
+    "one-test": "react-scripts test --testPathPattern src/features/dashboard --env=jsdom jest",
     "cypress": "cypress open",
     "eject": "react-scripts eject",
     "lint:js": "eslint src --fix",

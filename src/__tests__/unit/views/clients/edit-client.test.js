@@ -1,7 +1,7 @@
 import React from "react";
 import MatchMediaMock from "jest-matchmedia-mock";
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
-import EditClientView from "../../../../features/Clients/edit-client-view/edit-client-view";
+import EditClientView from "../../../../features/clients/edit-client-view/edit-client-view";
 import { RenderWithRouterMatch } from "../../../test-utils";
 import { client } from "../../../__fixtures__/client";
 

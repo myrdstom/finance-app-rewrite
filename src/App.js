@@ -6,8 +6,10 @@ import { CssBaseline } from "@mui/material";
 import Routes from "router";
 import { theme } from "styles/theme";
 import store from "redux/combineStore";
+import { getTokenData } from "utils/getToken";
 
 function App() {
+  getTokenData();
   return (
     <Provider store={store}>
       <ThemeProvider theme={theme}>

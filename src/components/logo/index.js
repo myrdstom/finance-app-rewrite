@@ -1,2 +1,2 @@
 // eslint-disable-next-line import/export
-export * from "./Logo";
+export * from "./logo";
