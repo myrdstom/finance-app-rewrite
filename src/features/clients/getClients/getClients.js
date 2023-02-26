@@ -142,12 +142,16 @@ const GetClients = () => {
   const dispatch = useDispatch();
   const clients = useSelector((state) => state?.clients.clients);
   const deleteClient = useSelector((state) => state?.clients.delete);
+  const editClient = useSelector((state) => state?.clients.editClient);
   useEffect(() => {
     if (deleteClient === true) {
       dispatch(getClients());
     }
+    if (editClient) {
+      dispatch(getClients());
+    }
     dispatch(getClients());
-  }, [deleteClient]);
+  }, [deleteClient, editClient]);
 
   useEffect(() => {
     if (clients) {
