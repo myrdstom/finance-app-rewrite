@@ -1,5 +1,5 @@
-import { Menu, MenuItem as MuiMenuItem, styled } from "@mui/material";
-import { COLORS, FONT } from "styles/theme";
+import { Menu, styled } from "@mui/material";
+import { FONT } from "styles/theme";
 
 export const StyledMenu = styled(Menu)`
   .MuiPaper-root {
@@ -19,12 +19,5 @@ export const StyledMenu = styled(Menu)`
     padding-bottom: ${({ theme }) => theme.spacing(1.5)};
     padding-left: ${({ theme }) => theme.spacing(1.5)};
     padding-right: ${({ theme }) => theme.spacing(1.6)};
-  }
-`;
-
-export const MenuItem = styled(MuiMenuItem)`
-  border-bottom: 0.0625rem solid ${COLORS.LIGHT_GREY};
-  &: hover {
-    background-color: ${COLORS.LIGHT_GREY};
   }
 `;

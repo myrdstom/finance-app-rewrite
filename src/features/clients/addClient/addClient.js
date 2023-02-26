@@ -1,22 +1,16 @@
-import React, { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import React from "react";
+import { useDispatch } from "react-redux";
 import { Formik } from "formik";
-import ResponsiveDrawer from "layouts/drawer";
-import AddClientForm from "./addClientForm";
 import { addClientYupObject } from "./addClient.Schema";
-import { addClient } from "../actions/clients/actions/client.actions";
+import {
+  addClient,
+  getClients,
+} from "../actions/clients/actions/client.actions";
+import { ClientModal } from "../../../components/clientsModal";
 
-const AddClient = () => {
-  const navigate = useNavigate();
+const AddClient = ({ setOpen, title }) => {
   const dispatch = useDispatch();
 
-  const clientError = useSelector((state) => state?.clients.error);
-  useEffect(() => {
-    if (clientError?.message) {
-      console.warn(clientError.message);
-    }
-  }, [clientError]);
   const defaultValues = {
     clientName: "",
     address: "",
@@ -26,7 +20,7 @@ const AddClient = () => {
     clientContactNumber: "",
   };
 
-  const handleSubmit = async (values, onSubmitProps) => {
+  const handleSubmit = async (values) => {
     const {
       clientName,
       address,
@@ -45,22 +39,20 @@ const AddClient = () => {
       clientContactNumber,
     };
     await dispatch(addClient(jsonData));
-    onSubmitProps.resetForm();
+    dispatch(getClients());
+    setOpen(false);
   };
 
-  const closePage = () => {
-    navigate("/clients");
-  };
   return (
-    <ResponsiveDrawer>
-      <Formik
-        initialValues={defaultValues}
-        validationSchema={addClientYupObject}
-        onSubmit={handleSubmit}
-      >
-        {(formik) => <AddClientForm formik={formik} onClick={closePage} />}
-      </Formik>
-    </ResponsiveDrawer>
+    <Formik
+      initialValues={defaultValues}
+      validationSchema={addClientYupObject}
+      onSubmit={handleSubmit}
+    >
+      {(formik) => (
+        <ClientModal setOpen={setOpen} title={title} formik={formik} />
+      )}
+    </Formik>
   );
 };
 

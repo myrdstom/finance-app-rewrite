@@ -119,7 +119,7 @@ const ClientsModal = ({ setOpen, title, formik }) => {
                 <Typography variant="w7">City</Typography>
                 <TextField
                   size="small"
-                  dataTestId="client-name"
+                  dataTestId="city"
                   name="city"
                   value={values.city}
                   onChange={handleChange}
@@ -135,7 +135,7 @@ const ClientsModal = ({ setOpen, title, formik }) => {
                 <Typography variant="w7">Country</Typography>
                 <TextField
                   size="small"
-                  dataTestId="client-name"
+                  dataTestId="country"
                   name="country"
                   value={values.country}
                   onChange={handleChange}
@@ -154,6 +154,7 @@ const ClientsModal = ({ setOpen, title, formik }) => {
                   variant="contained"
                   background={COLORS.LIGHT_BLUE}
                   hoverbackground={COLORS.LIGHT_BLUE}
+                  dataTestId="save"
                 >
                   Save
                 </CustomButton>

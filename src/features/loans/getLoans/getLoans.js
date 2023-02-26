@@ -3,7 +3,7 @@ import ResponsiveDrawer from "layouts/drawer";
 
 const GetLoans = () => (
   <ResponsiveDrawer>
-    <div>Get Clients</div>
+    <div>Get Loans</div>
   </ResponsiveDrawer>
 );
 

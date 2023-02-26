@@ -19,6 +19,7 @@ export const DataGrid = ({
   return (
     <Box sx={{ height, width: "100%" }}>
       <MUIDataGrid
+        sx={{ borderRadius: 0 }}
         rows={rows}
         columns={columns}
         pageSize={pageSize}

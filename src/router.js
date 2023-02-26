@@ -4,7 +4,6 @@ import Login from "features/auth/login";
 import Registration from "features/auth/registration";
 import Dashboard from "features/dashboard";
 import GetClients from "features/clients/getClients";
-import { AddClient } from "features/clients/addClient";
 import GetLoans from "features/loans/getLoans";
 
 const Routes = () =>
@@ -27,10 +26,6 @@ const Routes = () =>
         {
           index: true,
           element: <GetClients />,
-        },
-        {
-          path: "add-client",
-          element: <AddClient />,
         },
       ],
     },

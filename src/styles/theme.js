@@ -13,6 +13,7 @@ export const COLORS = {
   SKY_BLUE: "#4a90e2",
   BLACK: "#000",
   METAL_GREY: "#97a2a2",
+  DARK_BLUE: "#001257",
 };
 
 export const ONE_REM_TO_PX = 16;
@@ -166,6 +167,18 @@ export const theme = createTheme({
       fontSize: FONT.SIZES[12],
       fontWeight: FONT.WEIGHT.MEDIUM,
       lineHeight: FONT.LINE_HEIGHTS[16],
+    },
+    w12: {
+      fontSize: FONT.SIZES[22],
+      fontWeight: FONT.WEIGHT.MEDIUM,
+      lineHeight: FONT.LINE_HEIGHTS[30],
+      color: COLORS.BLACK,
+    },
+    w13: {
+      fontSize: FONT.SIZES[14],
+      fontWeight: FONT.WEIGHT.REGULAR,
+      lineHeight: FONT.LINE_HEIGHTS[19],
+      color: COLORS.DARK_GREY,
     },
   },
 });

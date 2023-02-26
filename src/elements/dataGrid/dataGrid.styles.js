@@ -4,12 +4,12 @@ import { COLORS } from "styles/theme";
 import StraightIcon from "@mui/icons-material/Straight";
 
 export const MUIDataGrid = styled(DataGrid)`
-  border: 0.063rem solid ${COLORS.MEDIUM_GREY};
-  border-radius: 0.325rem;
+  border: 0;
   .MuiDataGrid-columnHeaders {
     background-color: ${COLORS.LIGHT_RED};
     font-size: 1rem;
     font-weight: 300;
+    border-radius: 0;
   }
 
   .MuiDataGrid-columnSeparator {

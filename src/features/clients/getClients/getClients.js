@@ -4,18 +4,16 @@ import ResponsiveDrawer from "layouts/drawer";
 import { DataGridContainer } from "components/dataGridContainer/dataGridContainer";
 import { DataGrid } from "elements/dataGrid";
 import { MUIStack } from "styles/styles";
-import {
-  Box,
-  Link,
-  ListItemText,
-  MenuItem,
-  Stack,
-  Typography,
-} from "@mui/material";
+import { Box, ListItemText, MenuItem, Stack, Typography } from "@mui/material";
 import KebabMenu from "components/kebabMenu";
 import { COLORS } from "styles/theme";
-import { getClients } from "../actions/clients/actions/client.actions";
+import { DeleteModal } from "components/deleteModal";
+import {
+  deleteClient,
+  getClients,
+} from "../actions/clients/actions/client.actions";
 import { EditClient } from "../editClient";
+import { AddClient } from "../addClient";
 
 const columns = [
   { field: "id", headerName: "ID", width: 0 },
@@ -90,29 +88,43 @@ const columns = [
     flex: 1,
     minWidth: 110,
     renderCell: (params) => {
-      const [openAdd, setOpenAdd] = useState(false);
       const [openEdit, setOpenEdit] = useState(false);
+      const [openDelete, setOpenDelete] = useState(false);
+      const dispatch = useDispatch();
+
+      const { id, name } = params.row;
+
+      const handleDelete = async (clientId) => {
+        dispatch(deleteClient(clientId));
+        setOpenDelete(false);
+      };
 
       return (
         <MUIStack justifyContent="space-evenly" width="100%" pr={4}>
-          <Stack direction="row" justifyContent="flex-end" gap={2.3}>
+          <Stack
+            direction="row"
+            justifyContent="flex-end"
+            gap={2.3}
+            data-testid="custom-element"
+          >
             <Box mt={1}>
-              <Link
-                underline="none"
-                href={`/clients/edit-client/${params.row.id}`}
+              <Typography
+                variant="w9"
+                onClick={() => setOpenEdit(true)}
+                clientId={id}
               >
-                <Typography variant="w9" onClick={() => setOpenAdd(true)}>
-                  Add Client
-                </Typography>
-              </Link>
+                Edit Client
+              </Typography>
             </Box>
             <KebabMenu color={COLORS.BLUE} width="1rem" height="1rem">
               <Box>
-                <MenuItem onClick={() => setOpenEdit(true)}>
-                  <ListItemText>Edit</ListItemText>
-                </MenuItem>
                 <MenuItem>
-                  <ListItemText sx={{ color: COLORS.RED }}>Remove</ListItemText>
+                  <ListItemText
+                    sx={{ color: COLORS.RED }}
+                    onClick={() => setOpenDelete(true)}
+                  >
+                    Remove
+                  </ListItemText>
                 </MenuItem>
               </Box>
             </KebabMenu>
@@ -120,14 +132,16 @@ const columns = [
               <EditClient
                 setOpen={setOpenEdit}
                 title="Edit Client"
-                clientId={params.row.id}
+                clientId={id}
               />
             )}
-            {openAdd && (
-              <EditClient
-                setOpen={setOpenEdit}
-                title="Edit Client"
-                clientId={params.row.clientId}
+            {openDelete && (
+              <DeleteModal
+                open={openDelete}
+                handleClick={() => setOpenDelete(false)}
+                title={name}
+                handleRemoveClick={() => handleDelete(id)}
+                subtitle={name}
               />
             )}
           </Stack>
@@ -139,19 +153,22 @@ const columns = [
 
 const GetClients = () => {
   const [allClients, setAllClients] = useState([]);
+  const [openAdd, setOpenAdd] = useState(false);
+  const [clientHeadings, setClientHeadings] = useState([]);
   const dispatch = useDispatch();
   const clients = useSelector((state) => state?.clients.clients);
-  const deleteClient = useSelector((state) => state?.clients.delete);
+  const removeClient = useSelector((state) => state?.clients.delete);
   const editClient = useSelector((state) => state?.clients.editClient);
+
   useEffect(() => {
-    if (deleteClient === true) {
+    if (removeClient === true) {
       dispatch(getClients());
     }
     if (editClient) {
       dispatch(getClients());
     }
     dispatch(getClients());
-  }, [deleteClient, editClient]);
+  }, [removeClient, editClient]);
 
   useEffect(() => {
     if (clients) {
@@ -173,13 +190,28 @@ const GetClients = () => {
           country,
         })
       );
+
+      const heading = [
+        {
+          title1: "Clients Registered",
+          title2: null,
+        },
+        {
+          title1: cleanedClients.length,
+          title2: "Clients",
+        },
+      ];
+      setClientHeadings(heading);
       setAllClients(cleanedClients);
     }
   }, [clients]);
-
   return (
     <ResponsiveDrawer>
-      <DataGridContainer section="Add Client">
+      <DataGridContainer
+        headings={clientHeadings}
+        setOpenAdd={setOpenAdd}
+        buttonTitle="Add Client"
+      >
         <DataGrid
           columns={columns}
           rows={allClients}
@@ -189,6 +221,7 @@ const GetClients = () => {
           hideColumn="id"
         />
       </DataGridContainer>
+      {openAdd && <AddClient setOpen={setOpenAdd} title="Add Client" />}
     </ResponsiveDrawer>
   );
 };
