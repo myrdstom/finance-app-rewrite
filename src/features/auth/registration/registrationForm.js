@@ -74,7 +74,7 @@ const RegistrationForm = ({ formik }) => (
       <Grid item xs={12}>
         <CustomButton
           type="submit"
-          fullWidth
+          width="100%"
           variant="contained"
           background={COLORS.SKY_BLUE}
           hoverbackground={COLORS.BLUE}

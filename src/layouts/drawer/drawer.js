@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useTheme } from "@mui/material/styles";
 import {
@@ -8,7 +8,6 @@ import {
   CssBaseline,
   Grid,
   Toolbar,
-  Link,
   List,
   ListItem,
   ListItemButton,
@@ -45,7 +44,7 @@ import {
   StyledList,
 } from "./drawer.styles";
 import { username } from "./utils";
-import { Logo } from "../logo";
+import { Logo } from "../../components/logo";
 
 const ResponsiveDrawer = ({ children }) => {
   const theme = useTheme();
@@ -184,8 +183,12 @@ const ResponsiveDrawer = ({ children }) => {
             <Divider />
             <List>
               {["Dashboard", "Clients", "Loans"].map((text, index) => (
-                <Link underline="none" href={`/${text.toLowerCase()}`}>
-                  <ListItem key={text} disablePadding>
+                <Link
+                  to={`/${text.toLowerCase()}`}
+                  style={{ textDecoration: "none" }}
+                  key={index}
+                >
+                  <ListItem disablePadding>
                     <ListItemButton>
                       <ListItemIcon sx={{ color: COLORS.MEDIUM_GREY }}>
                         {index === 0 ? (

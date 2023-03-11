@@ -1,0 +1,50 @@
+[
+  {
+    "_id": "6342d100abbe7792dc4f9680",
+    "clientId": "mwTPgYBNh",
+    "clientName": "Allied Power",
+    "address": "Plot 32/34, 7th street  Industrial Area",
+    "managerEmail": "nsereko@gmail.com",
+    "city": "Kampala",
+    "country": "Uganda",
+    "clientContactEmail": "deborah@gmail.com",
+    "clientContactNumber": "0799999999",
+    "__v": 0
+  },
+  {
+    "_id": "6342d212abbe7792dc4f96af",
+    "clientId": "LkwbmB97k",
+    "clientName": "Hannington Ssebaduka",
+    "address": "Gayaza",
+    "managerEmail": "nsereko@gmail.com",
+    "city": "Kampala",
+    "country": "Uganda",
+    "clientContactEmail": "aduka@gmail.com",
+    "clientContactNumber": "0799999999",
+    "__v": 0
+  },
+  {
+    "_id": "6342d3a0abbe7792dc4f96c4",
+    "clientId": "3vi4DyTNL",
+    "clientName": "March 5 Design LTD",
+    "address": "Acacia Avenue",
+    "managerEmail": "nsereko@gmail.com",
+    "city": "Kampala",
+    "country": "Uganda",
+    "clientContactEmail": "xenic@gmail.com",
+    "clientContactNumber": "0799999999",
+    "__v": 0
+  },
+  {
+    "_id": "63431c23abbe7792dc4f96e1",
+    "clientId": "gLA4ojMOW",
+    "clientName": "Hassan Yathrib",
+    "address": "Kawempe",
+    "managerEmail": "nsereko@gmail.com",
+    "city": "Kampala",
+    "country": "Uganda",
+    "clientContactEmail": "athrib@gmail.com",
+    "clientContactNumber": "0799999999",
+    "__v": 0
+  }
+]

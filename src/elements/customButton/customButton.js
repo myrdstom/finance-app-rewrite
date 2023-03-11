@@ -9,6 +9,7 @@ function CustomButton({
   hoverbackground,
   border,
   variant,
+  dataTestId,
   ...props
 }) {
   return (
@@ -19,6 +20,7 @@ function CustomButton({
       fontcolor={fontcolor}
       border={border}
       variant={variant}
+      data-testid={dataTestId}
       {...props}
     >
       {children}

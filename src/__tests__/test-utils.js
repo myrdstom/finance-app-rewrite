@@ -3,6 +3,7 @@ import { useLoginHandlers } from "features/auth/login/login.handlers";
 import { useRegistrationHandlers } from "features/auth/registration/registration.handlers";
 import { useGetLoanHandlers } from "features/loans/loans.handlers";
 import { useDashboardHandlers } from "features/dashboard/dashboard.handlers";
+import { useClientHandlers } from "features/clients/clients.handlers";
 
 let server;
 
@@ -11,7 +12,8 @@ export function startServer() {
     ...useLoginHandlers,
     ...useRegistrationHandlers,
     ...useGetLoanHandlers,
-    ...useDashboardHandlers
+    ...useDashboardHandlers,
+    ...useClientHandlers
   );
   return server;
 }
