@@ -1,9 +1,9 @@
 import React from "react";
-import ResponsiveDrawer from "components/drawer";
+import ResponsiveDrawer from "layouts/drawer";
 
 const GetLoans = () => (
   <ResponsiveDrawer>
-    <div>Get Clients</div>
+    <div>Get Loans</div>
   </ResponsiveDrawer>
 );
 

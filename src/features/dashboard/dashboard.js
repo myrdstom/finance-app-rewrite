@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import ResponsiveDrawer from "components/drawer";
+import ResponsiveDrawer from "layouts/drawer";
 import { getLoans } from "redux/actions/loans/actions/loan.actions";
 import { useDispatch, useSelector } from "react-redux";
 import { getCurrencyRates } from "api/currencyConverter";

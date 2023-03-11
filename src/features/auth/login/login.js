@@ -9,7 +9,7 @@ import {
   EMAIL_REQUIRED,
   INVALID_EMAIL_ADDRESS,
   PASSWORD_REQUIRED,
-} from "constants/views/auth";
+} from "constants/features/auth";
 import SnackBar from "elements/snackBar";
 import { loginUser } from "../actions/auth.actions";
 import LoginForm from "./loginForm";

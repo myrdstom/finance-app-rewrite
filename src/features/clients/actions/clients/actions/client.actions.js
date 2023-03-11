@@ -1,4 +1,4 @@
-import { instance } from "../../../../config/client";
+import { instance } from "../../../../../config/client";
 import {
   getClientsAction,
   clientActionFailed,
@@ -15,7 +15,7 @@ export const getClients = () => (dispatch) => {
       dispatch(getClientsAction(res.data));
     })
     .catch((err) => {
-      dispatch(clientActionFailed(err.response.data));
+      dispatch(clientActionFailed(err?.response?.data));
     });
 };
 
@@ -26,7 +26,7 @@ export const getClient = (clientId) => (dispatch) => {
       dispatch(getAClientAction(res.data));
     })
     .catch((err) => {
-      dispatch(clientActionFailed(err.response.data));
+      dispatch(clientActionFailed(err?.response?.data));
     });
 };
 
@@ -37,7 +37,7 @@ export const addClient = (clientData) => (dispatch) => {
       dispatch(addClientAction(res.data));
     })
     .catch((err) => {
-      dispatch(clientActionFailed(err.response.data));
+      dispatch(clientActionFailed(err?.response?.data));
     });
 };
 
@@ -46,7 +46,7 @@ export const editClient = (jsonData, clientId) => (dispatch) => {
     .put(`client/${clientId}`, jsonData)
     .then(() => dispatch(editClientAction()))
     .catch((err) => {
-      dispatch(clientActionFailed(err.response.data));
+      dispatch(clientActionFailed(err?.response?.data));
     });
 };
 
@@ -55,6 +55,6 @@ export const deleteClient = (clientId) => (dispatch) => {
     .delete(`client/${clientId}`)
     .then(() => dispatch(deleteClientAction()))
     .catch((err) => {
-      dispatch(clientActionFailed(err.response.data));
+      dispatch(clientActionFailed(err?.response?.data));
     });
 };

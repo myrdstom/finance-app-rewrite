@@ -2,7 +2,7 @@ import React from "react";
 import { TextField as MuiTextField } from "@mui/material";
 import { FormControl } from "./textField.styles";
 
-function TextField({
+const TextField = ({
   dataTestId,
   errors,
   helperText,
@@ -10,20 +10,18 @@ function TextField({
   value,
   width,
   ...props
-}) {
-  return (
-    <FormControl width={width}>
-      <MuiTextField
-        name={name}
-        data-testid={dataTestId}
-        value={value}
-        fullWidth
-        error={errors}
-        helperText={helperText}
-        {...props}
-      />
-    </FormControl>
-  );
-}
+}) => (
+  <FormControl width={width}>
+    <MuiTextField
+      name={name}
+      data-testid={dataTestId}
+      value={value}
+      fullWidth
+      error={errors}
+      helperText={helperText}
+      {...props}
+    />
+  </FormControl>
+);
 
 export default TextField;

@@ -12,7 +12,7 @@ import {
   INVALID_EMAIL_ADDRESS,
   LAST_NAME_REQUIRED,
   PASSWORD_REQUIRED,
-} from "constants/views/auth";
+} from "constants/features/auth";
 import SnackBar from "elements/snackBar";
 import { registerUser } from "../actions/auth.actions";
 import { Stack } from "../auth.styles";

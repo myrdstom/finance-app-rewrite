@@ -22,9 +22,15 @@ const Routes = () =>
     },
     {
       path: "/clients",
-      element: <GetClients />,
+      children: [
+        {
+          index: true,
+          element: <GetClients />,
+        },
+      ],
     },
     {
+      index: false,
       path: "/loans",
       element: <GetLoans />,
     },
