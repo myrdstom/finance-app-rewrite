@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { Formik } from "formik";
-import { addClientYupObject } from "./addClient.Schema";
+import { addClientYupObject } from "../clients.schema";
 import {
   addClient,
   getClients,

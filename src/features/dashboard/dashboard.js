@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ResponsiveDrawer from "layouts/drawer";
-import { getLoans } from "redux/actions/loans/actions/loan.actions";
+import { getLoans } from "features/loans/actions/loans/actions/loan.actions";
 import { useDispatch, useSelector } from "react-redux";
 import { getCurrencyRates } from "api/currencyConverter";
 import {

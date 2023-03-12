@@ -1,7 +1,7 @@
-import { instance } from "../../../../config/client";
+import { instance } from "../../../../../config/client";
 
 import { getLoansAction, addLoanAction, loanActionFailed } from "./loan.types";
-import { loadingAction } from "../../loader/loading.actions";
+import { loadingAction } from "../../../../../redux/actions/loader/loading.actions";
 
 export const getLoans = () => (dispatch) => {
   dispatch(loadingAction());
