@@ -5,3 +5,5 @@ export const useGetLoanHandlers = mockHandlers(
   [{ endpoint: "finance/manager/email", data: clientLoans }],
   "get"
 );
+
+//tette
