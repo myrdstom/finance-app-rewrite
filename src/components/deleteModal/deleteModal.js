@@ -39,7 +39,11 @@ export const DeleteModal = ({
         mb={4}
         justifyContent="space-evenly"
       >
-        <CustomButton width="4.37rem" onClick={() => handleClick()}>
+        <CustomButton
+          width="4.37rem"
+          onClick={() => handleClick()}
+          border="none"
+        >
           <Typography variant="w11" color={COLORS.LIGHT_RED}>
             Keep
           </Typography>
