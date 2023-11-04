@@ -5,6 +5,7 @@ import Registration from "features/auth/registration";
 import Dashboard from "features/dashboard";
 import GetClients from "features/clients/getClients";
 import GetLoans from "features/loans/getLoans";
+import GetPayments from "./features/payments/getPayments";
 
 const Routes = () =>
   useRoutes([
@@ -33,6 +34,11 @@ const Routes = () =>
       index: false,
       path: "/loans",
       element: <GetLoans />,
+    },
+    {
+      index: false,
+      path: "/payments",
+      element: <GetPayments />,
     },
   ]);
 export default Routes;

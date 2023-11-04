@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
-import ResponsiveDrawer from "layouts/drawer";
-import { DataGridContainer } from "components/dataGridContainer/dataGridContainer";
 import { useDispatch, useSelector } from "react-redux";
 import { Box, ListItemText, MenuItem, Stack, Typography } from "@mui/material";
+import { useNavigation } from "react-router-dom";
+import ResponsiveDrawer from "layouts/drawer";
+import { DataGridContainer } from "components/dataGridContainer/dataGridContainer";
 import { getLoans } from "../actions/loans/actions/loan.actions";
 import { DataGrid } from "../../../elements/dataGrid";
 import { MUIStack } from "../../../styles/styles";
 import { deleteClient } from "../../clients/actions/clients/actions/client.actions";
 import KebabMenu from "../../../components/kebabMenu";
 import { COLORS } from "../../../styles/theme";
-import { EditClient } from "../../clients/editClient";
 import { DeleteModal } from "../../../components/deleteModal";
 import { AddLoan } from "../addLoan";
 
@@ -140,6 +140,7 @@ const columns = [
       const [openDelete, setOpenDelete] = useState(false);
       const dispatch = useDispatch();
 
+
       const { id, name } = params.row;
 
       const handleDelete = async (loanId) => {
@@ -158,7 +159,6 @@ const columns = [
             <Box mt={1}>
               <Typography
                 variant="w9"
-                onClick={() => setOpenLoan(true)}
                 clientId={id}
               >
                 Loan Payments
@@ -176,17 +176,10 @@ const columns = [
                 </MenuItem>
               </Box>
             </KebabMenu>
-            {openLoan && (
-              <EditClient
-                setOpen={setOpenLoan}
-                title="Edit Client"
-                clientId={id}
-              />
-            )}
             {openDelete && (
               <DeleteModal
                 open={openDelete}
-                handleClick={() => setOpenDelete(false)}
+                handleClick={() => navigate("/payments/")}
                 title={name}
                 handleRemoveClick={() => handleDelete(id)}
                 subtitle={name}
