@@ -161,7 +161,7 @@ const columns = [
                 onClick={() => setOpenLoan(true)}
                 clientId={id}
               >
-                View
+                Loan Payments
               </Typography>
             </Box>
             <KebabMenu color={COLORS.BLUE} width="1rem" height="1rem">
