@@ -157,7 +157,7 @@ const getMonthlyInterest = (interestData) => {
     const max = 12;
     if (interest.months < max) {
       const maxDiff = max - interest.monthsAgo;
-      const isBefore = Array(maxDiff).fill(0);
+      const isBefore = Array(maxDiff < 0 ? 0 : maxDiff).fill(0);
       const isCurrent = Array(Number(interest.months)).fill(interest.amount);
 
       interestArray.push([...isBefore, ...isCurrent]);

@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Stack, Typography } from "@mui/material";
-import { Container } from "./dataGridContainer.styles";
+import { Container, MuiStack } from "./dataGridContainer.styles";
 
 export const DataGridContainer = ({
   children,
@@ -41,7 +41,7 @@ export const DataGridContainer = ({
           </Stack>
         ))}
       </Stack>
-      <Stack justifyContent="space-evenly" mt={1.4} mb={0.8} mr={3.5}>
+      <MuiStack justifyContent="space-evenly" mt={2} mb={0.5} mr={5}>
         <Typography
           variant="w9"
           onClick={() => setOpenAdd(true)}
@@ -50,7 +50,7 @@ export const DataGridContainer = ({
         >
           {buttonTitle}
         </Typography>
-      </Stack>
+      </MuiStack>
     </Stack>
 
     {children}

@@ -1,10 +1,10 @@
-import { instance } from "../../../../config/client";
+import { instance } from "../../../../../config/client";
 import {
   getPaymentsAction,
   addPaymentAction,
   paymentActionFailed,
 } from "./payments.types";
-import { loadingAction } from "../../loader/loading.actions";
+import { loadingAction } from "../../../../../redux/actions/loader/loading.actions";
 
 export const getPayments = (id) => (dispatch) => {
   dispatch(loadingAction());
