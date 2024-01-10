@@ -8,6 +8,7 @@ import { theme } from "styles/theme";
 import store from "redux/combineStore";
 import { getTokenData } from "utils/getToken";
 
+// Testing that I can push to git, delete comment
 function App() {
   getTokenData();
   return (
